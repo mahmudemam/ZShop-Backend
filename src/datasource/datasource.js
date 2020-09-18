@@ -1,5 +1,6 @@
 const data = [
   {
+    id: "1",
     name: "Nestle Quality Street Chocolate",
     price: "170",
     discountPrice: "145.95",
@@ -25,6 +26,7 @@ const data = [
     ],
   },
   {
+    id: "2",
     name: "Ahmed Tea Earl Grey",
     price: "88.95",
     discountPrice: null,
@@ -44,6 +46,7 @@ const data = [
     ],
   },
   {
+    id: "3",
     name: "Almarai Full Milk",
     price: "22.95",
     discountPrice: null,
@@ -58,6 +61,7 @@ const data = [
     ],
   },
   {
+    id: "4",
     name: "Amira Vegetable Ghee",
     price: "62.95",
     discountPrice: null,
@@ -77,6 +81,7 @@ const data = [
     ],
   },
   {
+    id: "5",
     name: "Cadbury Bubbly Chocolate",
     price: "22.45",
     discountPrice: null,
@@ -101,6 +106,7 @@ const data = [
     ],
   },
   {
+    id: "6",
     name: "Crystal Gold Vegetable Ghee",
     price: "64.55",
     discountPrice: null,
@@ -115,6 +121,7 @@ const data = [
     ],
   },
   {
+    id: "7",
     name: "Heinz Tomato Paste",
     price: "10.75",
     discountPrice: null,
@@ -139,6 +146,7 @@ const data = [
     ],
   },
   {
+    id: "8",
     name: "Juhayana Full Cream Milk",
     price: "15.70",
     discountPrice: null,
@@ -153,6 +161,7 @@ const data = [
     ],
   },
   {
+    id: "9",
     name: "Pampers",
     price: "160",
     discountPrice: null,
@@ -181,6 +190,7 @@ const ds = {
       return product;
     });
   },
+  fetchProductById: (id) => data.find((e) => e.id == id),
 };
 
 module.exports = ds;
