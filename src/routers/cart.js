@@ -14,4 +14,8 @@ routers.post("/", function (req, res) {
   res.status(201).location(`/cart/${id}`).send();
 });
 
+routers.get("/", function (req, res) {
+  res.status(200).json(ds.fetchCartItems());
+});
+
 module.exports = routers;

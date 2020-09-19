@@ -6,6 +6,7 @@ const cartDS = {
     cart.push(cartItem);
     return uuidv4();
   },
+  fetchCartItems: () => cart,
 };
 
 module.exports = cartDS;
