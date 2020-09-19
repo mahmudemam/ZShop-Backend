@@ -1,6 +1,6 @@
 const express = require("express");
 
-const ds = require("../datasource/datasource");
+const ds = require("../datasource/products");
 
 const routers = express.Router();
 
