@@ -28,4 +28,12 @@ routers.get("/:id", function (req, res) {
   }
 });
 
+routers.delete("/:id", function (req, res) {
+  const itemId = req.params.id;
+
+  ds.deleteCartItemById(itemId);
+
+  res.status(200).send();
+});
+
 module.exports = routers;
