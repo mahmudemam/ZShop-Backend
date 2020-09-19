@@ -18,4 +18,14 @@ routers.get("/", function (req, res) {
   res.status(200).json(ds.fetchCartItems());
 });
 
+routers.get("/:id", function (req, res) {
+  const cartItem = ds.fetchCartItemById(req.params.id);
+
+  if (cartItem != undefined) {
+    res.status(200).json(cartItem);
+  } else {
+    res.status(404).send();
+  }
+});
+
 module.exports = routers;
