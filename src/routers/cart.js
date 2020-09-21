@@ -42,4 +42,14 @@ routers.delete("/", function (req, res) {
   res.send();
 });
 
+routers.patch("/:id", function (req, res) {
+  const item = ds.updateCartItem(req.params.id, req.body);
+
+  if (item != undefined) {
+    res.json(item);
+  } else {
+    res.status(404).send();
+  }
+});
+
 module.exports = routers;
