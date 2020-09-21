@@ -36,4 +36,10 @@ routers.delete("/:id", function (req, res) {
   res.status(200).send();
 });
 
+routers.delete("/", function (req, res) {
+  ds.clearCart();
+
+  res.send();
+});
+
 module.exports = routers;

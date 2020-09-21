@@ -11,6 +11,7 @@ const cartDS = {
   fetchCartItems: () => cart,
   fetchCartItemById: (id) => cart.find((e) => e.id == id),
   deleteCartItemById: (id) => (cart = cart.filter((e) => e.id != id)),
+  clearCart: () => (cart = []),
 };
 
 module.exports = cartDS;
