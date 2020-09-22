@@ -18,4 +18,4 @@ apiServer.get("/", function (req, res) {
   res.send("Hello from Express");
 });
 
-apiServer.listen(3000, () => console.log("API Server started"));
+apiServer.listen(3000, "0.0.0.0", () => console.log("API Server started"));
