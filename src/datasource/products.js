@@ -8,17 +8,20 @@ const data = [
     isFavorite: false,
     shops: [
       {
+        id: "1",
         name: "Carrefour",
         image: "assets/images/carrefour.jpg",
         price: "170",
         discountPrice: "145.95",
       },
       {
+        id: "2",
         name: "Hyperone",
         image: "assets/images/hyperone.png",
         price: "172",
       },
       {
+        id: "3",
         name: "Spinneys",
         image: "assets/images/spinneys.png",
         price: "180",
@@ -34,11 +37,13 @@ const data = [
     isFavorite: false,
     shops: [
       {
+        id: "1",
         name: "Carrefour",
         image: "assets/images/carrefour.jpg",
         price: "90",
       },
       {
+        id: "2",
         name: "Hyperone",
         image: "assets/images/hyperone.png",
         price: "88.95",
@@ -54,6 +59,7 @@ const data = [
     isFavorite: false,
     shops: [
       {
+        id: "1",
         name: "Carrefour",
         image: "assets/images/carrefour.jpg",
         price: "22.95",
@@ -69,11 +75,13 @@ const data = [
     isFavorite: false,
     shops: [
       {
+        id: "2",
         name: "Hyperone",
         image: "assets/images/hyperone.png",
         price: "63",
       },
       {
+        id: "3",
         name: "Spinneys",
         image: "assets/images/spinneys.png",
         price: "62.95",
@@ -89,16 +97,19 @@ const data = [
     isFavorite: false,
     shops: [
       {
+        id: "1",
         name: "Carrefour",
         image: "assets/images/carrefour.jpg",
         price: "22.45",
       },
       {
+        id: "2",
         name: "Hyperone",
         image: "assets/images/hyperone.png",
         price: "23",
       },
       {
+        id: "3",
         name: "Spinneys",
         image: "assets/images/spinneys.png",
         price: "22.85",
@@ -114,6 +125,7 @@ const data = [
     isFavorite: false,
     shops: [
       {
+        id: "3",
         name: "Spinneys",
         image: "assets/images/spinneys.png",
         price: "64.55",
@@ -129,16 +141,19 @@ const data = [
     isFavorite: false,
     shops: [
       {
+        id: "1",
         name: "Carrefour",
         image: "assets/images/carrefour.jpg",
         price: "10.75",
       },
       {
+        id: "2",
         name: "Hyperone",
         image: "assets/images/hyperone.png",
         price: "12",
       },
       {
+        id: "3",
         name: "Spinneys",
         image: "assets/images/spinneys.png",
         price: "11",
@@ -154,6 +169,7 @@ const data = [
     isFavorite: false,
     shops: [
       {
+        id: "1",
         name: "Carrefour",
         image: "assets/images/carrefour.jpg",
         price: "15.70",
@@ -169,11 +185,13 @@ const data = [
     isFavorite: false,
     shops: [
       {
+        id: "2",
         name: "Hyperone",
         image: "assets/images/hyperone.png",
         price: "160",
       },
       {
+        id: "3",
         name: "Spinneys",
         image: "assets/images/spinneys.png",
         price: "160.01",
