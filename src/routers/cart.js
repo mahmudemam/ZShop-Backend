@@ -35,8 +35,8 @@ routers.delete("/:id", async (req, res) => {
   res.status(200).send();
 });
 
-routers.delete("/", function (req, res) {
-  ds.clearCart();
+routers.delete("/", async (req, res) => {
+  await ds.clearCart();
 
   res.send();
 });

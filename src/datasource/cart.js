@@ -1,6 +1,5 @@
 const { ObjectID } = require("mongodb");
 const Connection = require(".");
-var cart = [];
 
 const cartDS = {
   addToCart: async (cartItem) => {
@@ -28,7 +27,11 @@ const cartDS = {
 
     await collection.deleteOne({ _id: ObjectID(id) });
   },
-  clearCart: () => (cart = []),
+  clearCart: async () => {
+    const collection = (await Connection).db.collection("cart");
+
+    await collection.deleteMany({});
+  },
   updateCartItem: async (id, patchCartItem) => {
     const collection = (await Connection).db.collection("cart");
     const updatedItem = (
