@@ -41,8 +41,8 @@ routers.delete("/", function (req, res) {
   res.send();
 });
 
-routers.patch("/:id", function (req, res) {
-  const item = ds.updateCartItem(req.params.id, req.body);
+routers.patch("/:id", async (req, res) => {
+  const item = await ds.updateCartItem(req.params.id, req.body);
 
   if (item != undefined) {
     res.json(item);

@@ -25,17 +25,17 @@ const cartDS = {
   },
   deleteCartItemById: (id) => (cart = cart.filter((e) => e.id != id)),
   clearCart: () => (cart = []),
-  updateCartItem: (id, patchCartItem) => {
-    const existingItem = cart.find((e) => e.id == id);
+  updateCartItem: async (id, patchCartItem) => {
+    const collection = (await Connection).db.collection("cart");
+    const updatedItem = (
+      await collection.findOneAndUpdate(
+        { _id: ObjectID(id) },
+        { $set: patchCartItem },
+        { returnOriginal: false }
+      )
+    ).value;
 
-    if (existingItem != undefined) {
-      const itemIdx = cart.findIndex((e) => e.id == id);
-      const newItem = { ...existingItem, ...patchCartItem };
-      cart[itemIdx] = newItem;
-      return newItem;
-    }
-
-    return undefined;
+    return updatedItem;
   },
 };
 
