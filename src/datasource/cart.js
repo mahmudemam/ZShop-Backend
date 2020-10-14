@@ -23,7 +23,11 @@ const cartDS = {
 
     return item;
   },
-  deleteCartItemById: (id) => (cart = cart.filter((e) => e.id != id)),
+  deleteCartItemById: async (id) => {
+    const collection = (await Connection).db.collection("cart");
+
+    await collection.deleteOne({ _id: ObjectID(id) });
+  },
   clearCart: () => (cart = []),
   updateCartItem: async (id, patchCartItem) => {
     const collection = (await Connection).db.collection("cart");

@@ -27,10 +27,10 @@ routers.get("/:id", async (req, res) => {
   }
 });
 
-routers.delete("/:id", function (req, res) {
+routers.delete("/:id", async (req, res) => {
   const itemId = req.params.id;
 
-  ds.deleteCartItemById(itemId);
+  await ds.deleteCartItemById(itemId);
 
   res.status(200).send();
 });
