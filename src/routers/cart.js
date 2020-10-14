@@ -12,8 +12,9 @@ routers.post("/", async (req, res) => {
   res.status(201).location(`/cart/${id}`).send();
 });
 
-routers.get("/", function (req, res) {
-  res.status(200).json(ds.fetchCartItems());
+routers.get("/", async (req, res) => {
+  const cart = await ds.fetchCartItems();
+  res.status(200).json(cart);
 });
 
 routers.get("/:id", function (req, res) {

@@ -8,7 +8,13 @@ const cartDS = {
 
     return id;
   },
-  fetchCartItems: () => cart,
+  fetchCartItems: async () => {
+    const collection = (await Connection).db.collection("cart");
+
+    const cart = await collection.find({}).toArray();
+
+    return cart;
+  },
   fetchCartItemById: (id) => cart.find((e) => e.id == id),
   deleteCartItemById: (id) => (cart = cart.filter((e) => e.id != id)),
   clearCart: () => (cart = []),
