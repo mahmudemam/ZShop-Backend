@@ -1,3 +1,4 @@
+const { ObjectID } = require("mongodb");
 const Connection = require(".");
 var cart = [];
 
@@ -15,7 +16,13 @@ const cartDS = {
 
     return cart;
   },
-  fetchCartItemById: (id) => cart.find((e) => e.id == id),
+  fetchCartItemById: async (id) => {
+    const collection = (await Connection).db.collection("cart");
+
+    const item = await collection.findOne({ _id: ObjectID(id) });
+
+    return item;
+  },
   deleteCartItemById: (id) => (cart = cart.filter((e) => e.id != id)),
   clearCart: () => (cart = []),
   updateCartItem: (id, patchCartItem) => {

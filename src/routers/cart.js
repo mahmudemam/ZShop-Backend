@@ -17,8 +17,8 @@ routers.get("/", async (req, res) => {
   res.status(200).json(cart);
 });
 
-routers.get("/:id", function (req, res) {
-  const cartItem = ds.fetchCartItemById(req.params.id);
+routers.get("/:id", async (req, res) => {
+  const cartItem = await ds.fetchCartItemById(req.params.id);
 
   if (cartItem != undefined) {
     res.status(200).json(cartItem);
