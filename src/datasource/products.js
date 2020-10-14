@@ -1,3 +1,5 @@
+const Connection = require("./index");
+
 const data = [
   {
     id: "1",
@@ -201,12 +203,19 @@ const data = [
 ];
 
 const productsDS = {
-  fetchProducts: () => {
-    return data.map((p) => {
-      const product = Object.assign({}, p);
-      delete product.shops;
-      return product;
-    });
+  fetchProducts: async () => {
+    const collection = (await Connection).collection;
+    const data = await collection
+      .find(
+        {},
+        {
+          projection: {
+            shops: 0,
+          },
+        }
+      )
+      .toArray();
+    return data;
   },
   fetchProductById: (id) => data.find((e) => e.id == id),
 };

@@ -4,8 +4,8 @@ const ds = require("../datasource/products");
 
 const routers = express.Router();
 
-routers.get("/", function (req, res) {
-  const products = ds.fetchProducts();
+routers.get("/", async (req, res) => {
+  const products = await ds.fetchProducts();
   res.status(200).json(products);
 });
 
