@@ -4,7 +4,7 @@ const Connection = require("./index");
 
 const productsDS = {
   fetchProducts: async () => {
-    const collection = (await Connection).collection;
+    const collection = (await Connection).db.collection("products");
     const data = await collection
       .find(
         {},
@@ -18,7 +18,7 @@ const productsDS = {
     return data;
   },
   fetchProductById: async (id) => {
-    const collection = (await Connection).collection;
+    const collection = (await Connection).db.collection("products");
     const data = await collection.findOne({ _id: ObjectID(id) });
 
     return data;

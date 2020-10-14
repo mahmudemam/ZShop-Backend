@@ -5,9 +5,9 @@ const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PAS
 const Connection = (async () => {
   const client = await MongoClient.connect(uri);
 
-  const collection = client.db("zshop").collection("products");
+  const db = client.db("zshop");
 
-  return { client, collection };
+  return { client, db };
 })();
 
 module.exports = Connection;
