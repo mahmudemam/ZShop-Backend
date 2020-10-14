@@ -4,12 +4,10 @@ const ds = require("../datasource/cart");
 
 const routers = express.Router();
 
-routers.post("/", function (req, res) {
+routers.post("/", async (req, res) => {
   const cartItem = req.body;
 
-  console.log(cartItem);
-
-  const id = ds.addToCart(cartItem);
+  const id = await ds.addToCart(cartItem);
 
   res.status(201).location(`/cart/${id}`).send();
 });

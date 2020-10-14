@@ -1,11 +1,11 @@
-const { v4: uuidv4 } = require("uuid");
+const Connection = require(".");
 var cart = [];
 
 const cartDS = {
-  addToCart: (cartItem) => {
-    const id = uuidv4();
-    cartItem.id = id;
-    cart.push(cartItem);
+  addToCart: async (cartItem) => {
+    const collection = (await Connection).db.collection("cart");
+    const id = await (await collection.insertOne(cartItem)).insertedId;
+
     return id;
   },
   fetchCartItems: () => cart,
